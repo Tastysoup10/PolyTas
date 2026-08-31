@@ -14,7 +14,7 @@
  *   - the sim worker filename "simulation_worker.bundle.js"
  *   - the numeric messageType protocol + field shapes
  *   - the 227-byte CarState binary layout
- *   - the leaderboard host polytrack-leaderboard.minceraft-player-2010.workers.dev + "/leaderboard"
+ *   - the leaderboard host polytas.minceraft-player-2010.workers.dev + "/leaderboard"
  *
  * Phase 2 (bruteforce) adds tas/tas-sim.worker.js + tas/vendor/determinism.js.
  * Phase 3 (savestate) adds the replay-drive + upload taint wiring.
