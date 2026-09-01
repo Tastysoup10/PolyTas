@@ -862,7 +862,7 @@
       if (String(method || "").toUpperCase() !== "POST") return false;
       var u = String(url || ""), host = "", path = u;
       try { var p = new URL(u, location.href); host = p.host; path = p.pathname; } catch (e) { host = u; path = u.split("?")[0]; }
-      if (host.indexOf("kodub.com") < 0) return false;       // only the kodub API
+      if (host.indexOf("polytas.minceraft-player-2010.workers.dev") < 0) return false;       // only the kodub API
       if (/\/leaderboard$/.test(path)) return true;            // the known submit endpoint
       try { if (typeof body === "string" && /(^|&)recording=/.test(body)) return true; } catch (e) {} // submit body signature
       return false;
@@ -942,8 +942,8 @@
   // (no per-person setup). This is a Supabase ANON public key; it's safe to ship
   // because the table's RLS only allows read + insert (no update/delete). A user
   // can still point at their OWN backend via the Configure form (overrides win).
-  var BOARD_URL = "https://vosvidewunkqxgjybinh.supabase.co";
-  var BOARD_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvc3ZpZGV3dW5rcXhnanliaW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA2MDMwMjEsImV4cCI6MjA5NjE3OTAyMX0.DzbvIkff8M_5fVfpGGOcSMYx3WJiBPM5RvfZaa6ijX8";
+  var BOARD_URL = "https://edgeoqjhugjolbthkygg.supabase.co";
+  var BOARD_KEY = "sb_publishable_Ii3TbmPQ3vvoZ8exJbBi2A_b93cqWJ4";
   var board = TAS.board = (function () {
     function raw() { try { return JSON.parse(localStorage.getItem("tas:board") || "{}") || {}; } catch (e) { return {}; } }
     // Effective config = embedded defaults overlaid with the user's overrides.
@@ -1018,7 +1018,7 @@
   gate.noteUrl = function (url) {
     try {
       var u = new URL(String(url || ""), location.href);
-      if (u.host.indexOf("kodub.com") >= 0 && /leaderboard/.test(u.pathname)) {
+      if (u.host.indexOf("polytas.minceraft-player-2010.workers.dev") >= 0 && /leaderboard/.test(u.pathname)) {
         var t = u.searchParams.get("trackId");
         if (t && t !== TAS.currentTrackId) { TAS.currentTrackId = t; bus.emit("track", t); }
         var uh = u.searchParams.get("userTokenHash");
